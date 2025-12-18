@@ -85,6 +85,7 @@ cp .env.example .env
 - `OPENAI_API_KEY`: OpenAI API 密钥
 - `SPEECH_DEVELOPER_SECRET`: 语音服务开发者密钥
 - `SPEECH_OPEN_ID`: 语音服务 Open ID
+（请联系FAP平台进行申请）
 
 ## 💡 快速开始
 
