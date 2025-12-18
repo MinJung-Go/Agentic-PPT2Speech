@@ -1,0 +1,38 @@
+# Core dependencies
+python-pptx>=0.6.21
+openai>=1.0.0
+Pillow>=10.0.0
+numpy>=1.24.0
+aiohttp>=3.8.0
+
+# Audio processing
+librosa>=0.10.0
+soundfile>=0.12.0
+pydub>=0.25.1
+
+# Video processing
+opencv-python>=4.8.0
+moviepy>=1.0.3
+
+# TTS engines
+gtts>=2.3.0
+edge-tts>=6.1.0
+azure-cognitiveservices-speech>=1.32.0  # Optional: for Azure TTS
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.66.0
+click>=8.1.0
+pyyaml>=6.0
+
+# Development dependencies
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+black>=23.0.0
+flake8>=6.1.0
+mypy>=1.5.0
+pre-commit>=3.4.0
+
+# Optional dependencies for advanced features
+# torch>=2.0.0  # For AI voice cloning
+# transformers>=4.30.0  # For advanced NLP
