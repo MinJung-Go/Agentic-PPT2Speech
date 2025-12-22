@@ -291,7 +291,7 @@ class VideoSynthesizer:
             Path to generated video
         """
         if speech_synthesizer is None:
-            from ..speech_generation import SpeechSynthesisPlugin
+            from ..speech_generator import SpeechSynthesisPlugin
             speech_synthesizer = SpeechSynthesisPlugin()
         
         with tempfile.TemporaryDirectory() as tmp_dir:
