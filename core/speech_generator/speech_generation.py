@@ -44,7 +44,7 @@ class SpeechSynthesisPlugin(BaseSpeechPlugin):
     
     def __init__(
         self,
-        api_url: Optional[str] = "http://fosp-gateway.vemic.com/speech_generation_service",
+        api_url: Optional[str] = "https://fosp-gateway.vemic.com/speech_generation_service/v1/tts",
         developer_secret: Optional[str] = None,
         open_id: Optional[str] = None,
         service_code: Optional[str] = None,
