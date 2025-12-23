@@ -310,20 +310,6 @@ config = PipelineConfig(
 
 本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
 
-## 🙏 致谢
-
-- [OpenAI](https://openai.com) - GPT 模型
-- [Edge-TTS](https://github.com/rany2/edge-tts) - 微软语音合成
-- [MoviePy](https://zulko.github.io/moviepy/) - 视频处理
-- [python-pptx](https://python-pptx.readthedocs.io/) - PPT 解析
-
-## 📮 联系与支持
-
-- 📧 Email: your.email@example.com
-- 💬 Issues: [GitHub Issues](https://github.com/MinJung-Go/Agentic-PPT2Speech/issues)
-- 📖 Wiki: [项目 Wiki](https://github.com/MinJung-Go/Agentic-PPT2Speech/wiki)
-
----
 
 <p align="center">
   如果这个项目对您有帮助，请给个 ⭐️ Star！
