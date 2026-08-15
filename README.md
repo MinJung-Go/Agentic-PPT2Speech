@@ -320,6 +320,12 @@ config = PipelineConfig(
 本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
 
 
-<p align="center">
-  如果这个项目对您有帮助，请给个 Star！
-</p>
+<div align="center">
+
+**如果这个项目对你有帮助，欢迎给个 Star！**
+
+如有问题或建议，欢迎提交 [Issue](https://github.com/MinJung-Go/Agentic-PPT2Speech/issues)
+
+Made by [MinJung-Go](https://github.com/MinJung-Go)
+
+</div>
