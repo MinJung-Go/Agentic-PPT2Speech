@@ -1,39 +1,48 @@
 # Agentic PPT to Speech Video Generator
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<div align="center">
 
-一个基于 AI Agent 的智能 PPT 转视频工具，能够深度理解演示文稿内容，自动生成专业演讲稿并合成高质量视频。
+**一个基于 AI Agent 的智能 PPT 转视频工具**，能够深度理解演示文稿内容，自动生成专业演讲稿并合成高质量视频。
 
-## 🌟 核心特性
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/MinJung-Go/Agentic-PPT2Speech/issues)
 
-### 🤖 AI Agent 驱动
+[核心特性](#核心特性) • [快速安装](#快速安装) • [快速开始](#快速开始) • [配置选项](#配置选项) • [项目结构](#项目结构) • [处理流程](#处理流程) • [高级功能](#高级功能) • [故障排除](#故障排除) • [贡献指南](#贡献指南) • [许可证](#许可证)
+
+</div>
+
+---
+
+## 核心特性
+
+### AI Agent 驱动
 - **深度内容理解**：AI Agent 能够理解 PPT 的整体结构和逻辑关系
 - **上下文感知**：批量处理时保持演讲内容的连贯性和递进关系
 - **智能适配**：根据幻灯片位置（开头、中间、结尾）自动调整演讲风格
 
-### 🎯 智能演讲稿生成
+### 智能演讲稿生成
 - **专业水准**：生成的演讲稿达到专业演讲者水平
 - **详细展开**：每页演讲稿确保 2 分钟以上的讲解内容
 - **自然过渡**：智能生成页面间的过渡语句
 
-### 🎙️ 高质量语音合成
+### 高质量语音合成
 - **多引擎支持**：Edge-TTS、Azure TTS、GTTS 等
 - **声音克隆**：支持基于参考音频的声音克隆（实验性功能）
 - **参数调节**：语速、音调、音量精细控制
 
-### 🎬 专业视频输出
-- **高清输出**：支持 1080p/4K 视频输出
+### 专业视频输出
+- **高清输出**：支持 1080p 视频输出
 - **平滑过渡**：幻灯片间自然过渡效果
 - **音视频同步**：精确的音画同步
 
-## 📋 环境要求
+## 环境要求
 
 - Python 3.8+
 - FFmpeg（用于视频处理）
 - 4GB+ RAM（推荐 8GB）
 
-## 🚀 快速安装
+## 快速安装
 
 ### 1. 克隆仓库
 ```bash
@@ -86,9 +95,9 @@ cp .env.example .env
 - `SPEECH_OPEN_ID`: 语音服务 Open ID
 （请联系FAP平台进行申请）
 
-## 💡 快速开始
+## 快速开始
 
-### 🎯 一行命令转换
+### 一行命令转换
 
 #### 基础转换
 ```bash
@@ -100,12 +109,12 @@ python run_pipeline.py --ppt data/Agent.pptx --context "AI技术分享"
 python run_pipeline.py --ppt data/Agent.pptx --config configs/voice_clone.json
 ```
 
-> 📌 **说明**：
+> **说明**：
 > - 第一个命令使用默认配置，生成标准 AI 语音
 > - 第二个命令使用语音克隆配置，生成与参考音频相似的声音（已预设"民酱"声音样本）
 > - 两个命令都会在 `output` 目录生成完整的演讲视频
 
-### 📝 Python API 使用
+### Python API 使用
 ```python
 from core.pipeline import PPTToVideoPipeline
 
@@ -132,23 +141,23 @@ async def convert_ppt():
 video = asyncio.run(convert_ppt())
 ```
 
-## ⚙️ 配置选项
+## 配置选项
 
 ### 预设配置
 
 ```python
 from configs import PipelineConfig
 
-# 🎯 默认配置 - 平衡质量和速度
+# 默认配置 - 平衡质量和速度
 config = PipelineConfig()
 
-# 🚀 高质量配置 - 最佳输出质量
+# 高质量配置 - 最佳输出质量
 config = PipelineConfig.from_preset("high_quality")
 
-# 🌍 英文配置 - 英文演讲优化
+# 英文配置 - 英文演讲优化
 config = PipelineConfig.from_preset("english")
 
-# 🎙️ 声音克隆配置 - 使用自定义声音
+# 声音克隆配置 - 使用自定义声音
 config = PipelineConfig.from_preset("voice_clone")
 ```
 
@@ -177,29 +186,29 @@ config = PipelineConfig(
 )
 ```
 
-## 📁 项目结构
+## 项目结构
 
 ```
 Agentic-PPT2Speech/
-├── 📂 configs/                 # 配置文件
-│   ├── 📄 default.json        # 默认配置
-│   ├── 📄 english.json        # 英文配置
-│   ├── 📄 high_quality.json   # 高质量配置
-│   └── 📄 voice_clone.json    # 声音克隆配置
-├── 📂 core/                   # 核心模块
-│   ├── 📦 pipeline/           # 处理流水线
-│   ├── 📦 ppt_parser/         # PPT 解析
-│   ├── 📦 transcript_generator/ # AI 演讲稿生成
-│   ├── 📦 speech_generation/  # 语音合成
-│   └── 📦 video_generation/   # 视频生成
-├── 📂 data/                   # 示例数据
-│   └── 📂 resources/          # 音频资源
-├── 📂 utils/                  # 工具函数
-├── 📄 run_pipeline.py         # 命令行入口
-└── 📄 requirements.txt        # 依赖列表
+├── configs/                   # 配置文件
+│   ├── default.json          # 默认配置
+│   ├── english.json          # 英文配置
+│   ├── high_quality.json     # 高质量配置
+│   └── voice_clone.json      # 声音克隆配置
+├── core/                     # 核心模块
+│   ├── pipeline/             # 处理流水线
+│   ├── ppt_parser/           # PPT 解析
+│   ├── transcript_generator/ # AI 演讲稿生成
+│   ├── speech_generation/    # 语音合成
+│   └── video_generation/     # 视频生成
+├── data/                     # 示例数据
+│   └── resources/            # 音频资源
+├── utils/                    # 工具函数
+├── run_pipeline.py           # 命令行入口
+└── requirements.txt          # 依赖列表
 ```
 
-## 🔄 处理流程
+## 处理流程
 
 ### 主流程图
 
@@ -214,14 +223,14 @@ Agentic-PPT2Speech/
 
 | 模块 | 功能 | 关键特性 |
 |------|------|----------|
-| 🖼️ **PPT 解析** | 将 PPT 转换为图片序列 | • 高 DPI 渲染<br/>• 支持 PPT/PPTX<br/>• 页数限制 |
-| 🤖 **AI 演讲稿** | 智能生成演讲内容 | • 上下文感知<br/>• 位置自适应<br/>• 内容增强 |
-| 🎙️ **语音合成** | 文本转语音 | • 多引擎支持<br/>• 声音克隆<br/>• 参数调节 |
-| 🎬 **视频合成** | 组合音视频 | • 平滑转场<br/>• 音画同步<br/>• 高清输出 |
+| **PPT 解析** | 将 PPT 转换为图片序列 | • 高 DPI 渲染<br/>• 支持 PPT/PPTX<br/>• 页数限制 |
+| **AI 演讲稿** | 智能生成演讲内容 | • 上下文感知<br/>• 位置自适应<br/>• 内容增强 |
+| **语音合成** | 文本转语音 | • 多引擎支持<br/>• 声音克隆<br/>• 参数调节 |
+| **视频合成** | 组合音视频 | • 平滑转场<br/>• 音画同步<br/>• 高清输出 |
 
-## 🛠️ 高级功能
+## 高级功能
 
-### 🎙️ 声音克隆
+### 声音克隆
 
 #### 命令行使用
 ```bash
@@ -247,9 +256,9 @@ video = pipeline.process_sync(
 )
 ```
 
-> 💡 **提示**：voice_clone.json 配置文件已预设了示例音频（data/resources/民酱.m4a），您可以直接使用或替换为自己的音频文件。
+> **提示**：voice_clone.json 配置文件已预设了示例音频（data/resources/民酱.m4a），您可以直接使用或替换为自己的音频文件。
 
-### 📊 批量处理优化
+### 批量处理优化
 ```python
 config = PipelineConfig(
     batch_size=10,              # 增大批处理大小
@@ -258,7 +267,7 @@ config = PipelineConfig(
 )
 ```
 
-### 🎨 视频效果增强
+### 视频效果增强
 ```python
 config = PipelineConfig(
     fade_in=1.0,               # 淡入效果
@@ -267,7 +276,7 @@ config = PipelineConfig(
 )
 ```
 
-## 🔧 故障排除
+## 故障排除
 
 ### 常见问题
 
@@ -289,14 +298,14 @@ config = PipelineConfig(
    - 增加 `min_transcript_length`
    - 提供更详细的 `presentation_context`
 
-## 🚀 性能优化
+## 性能优化
 
 - **使用异步处理**：对于大型 PPT 文件
 - **调整批处理大小**：根据内存情况优化
 - **启用缓存**：避免重复处理
 - **使用 GPU**：如果可用，加速视频处理
 
-## 🤝 贡献指南
+## 贡献指南
 
 我们欢迎各种形式的贡献！
 
@@ -306,11 +315,11 @@ config = PipelineConfig(
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 开启 Pull Request
 
-## 📄 许可证
+## 许可证
 
 本项目采用 MIT 许可证 - 详见 [LICENSE](LICENSE) 文件
 
 
 <p align="center">
-  如果这个项目对您有帮助，请给个 ⭐️ Star！
+  如果这个项目对您有帮助，请给个 Star！
 </p>
