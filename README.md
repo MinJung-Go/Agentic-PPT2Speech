@@ -256,7 +256,7 @@ video = pipeline.process_sync(
 )
 ```
 
-> **提示**：voice_clone.json 配置文件已预设了示例音频（data/resources/民酱.m4a），您可以直接使用或替换为自己的音频文件。
+> **提示**：voice_clone.json 配置文件已预设了示例音频（data/resources/民酱.wav），您可以直接使用或替换为自己的音频文件。
 
 ### 批量处理优化
 ```python
@@ -319,6 +319,7 @@ config = PipelineConfig(
 
 本项目采用 [MIT License](LICENSE) 开源，版权所有 © 2025 MinJung-Go。
 
+---
 
 <div align="center">
 
