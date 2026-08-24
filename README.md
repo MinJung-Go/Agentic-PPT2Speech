@@ -1,12 +1,12 @@
-# Agentic PPT to Speech Video Generator
-
 <div align="center">
 
-**一个基于 AI Agent 的智能 PPT 转视频工具**，能够深度理解演示文稿内容，自动生成专业演讲稿并合成高质量视频。
+<h1>Agentic PPT to Speech Video Generator</h1>
 
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/MinJung-Go/Agentic-PPT2Speech/issues)
+
+**一个基于 AI Agent 的 PPT 转视频工具，可从演示文稿生成演讲稿、语音和视频。**
 
 [核心特性](#核心特性) • [快速安装](#快速安装) • [快速开始](#快速开始) • [配置选项](#配置选项) • [项目结构](#项目结构) • [处理流程](#处理流程) • [高级功能](#高级功能) • [故障排除](#故障排除) • [贡献指南](#贡献指南) • [许可证](#许可证)
 
@@ -22,9 +22,9 @@
 - **智能适配**：根据幻灯片位置（开头、中间、结尾）自动调整演讲风格
 
 ### 智能演讲稿生成
-- **专业水准**：生成的演讲稿达到专业演讲者水平
-- **详细展开**：每页演讲稿确保 2 分钟以上的讲解内容
-- **自然过渡**：智能生成页面间的过渡语句
+- **结构化讲稿**：根据每页内容生成可继续编辑的演讲稿
+- **内容展开**：结合上下文扩展讲解内容；实际时长取决于输入、配置和朗读语速
+- **页面衔接**：根据相邻页面内容生成过渡语句
 
 ### 高质量语音合成
 - **多引擎支持**：Edge-TTS、Azure TTS、GTTS 等
@@ -34,7 +34,7 @@
 ### 专业视频输出
 - **高清输出**：支持 1080p 视频输出
 - **平滑过渡**：幻灯片间自然过渡效果
-- **音视频同步**：精确的音画同步
+- **音视频合成**：按生成音频组织幻灯片画面与转场
 
 ## 环境要求
 
